@@ -45,7 +45,7 @@ app.use('/api', require('./controllers'));
 
 // for production use, we serve the static react build folder
 if(process.env.NODE_ENV==='production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
+  // app.use(express.static(path.join(__dirname, '../client/build')));
 
   // all unknown routes should be handed to our react app
   app.get('*', function (req, res) {
