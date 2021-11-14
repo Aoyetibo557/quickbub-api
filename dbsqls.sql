@@ -1,0 +1,16 @@
+-- CREATE TABLE jobs (
+-- 	id INT NOT NULL auto_increment,
+--     jobId VARCHAR(255) NOT NULL,
+--     title VARCHAR(255) NOT NULL,
+--     joblocation VARCHAR(255) NOT NULL,
+--     author VARCHAR(255) NOT NULL,
+--     description VARCHAR(255) NOT NULL,
+--     price VARCHAR(255) NOT NULL, 
+--     rating VARCHAR(100) NOT NULL,
+--     jobstatus VARCHAR(255) NOT NULL,
+--     tag1 VARCHAR(255) NOT NULL, 
+--     tag2 VARCHAR(255) NOT NULL,
+--     primary key (id)    
+-- );
+
+-- DROP TABLE jobs;
