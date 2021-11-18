@@ -30,6 +30,12 @@ module.exports = (sequelize, Sequelize) => {
         tag2: {
             type: Sequelize.STRING
         },
+        latitude: {
+            type: Sequelize.STRING
+        },
+        longitude: {
+            type: Sequelize.STRING
+        }
     }, {
          //dont add the timestamp attributes
         timestamps: false,
