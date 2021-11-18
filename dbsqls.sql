@@ -10,7 +10,25 @@
 --     jobstatus VARCHAR(255) NOT NULL,
 --     tag1 VARCHAR(255) NOT NULL, 
 --     tag2 VARCHAR(255) NOT NULL,
+--     latitude VARCHAR(225) NOT NULL,
+--      longitude VARCHAR(255) NOT NULL,
 --     primary key (id)    
 -- );
 
+
+
+
 -- DROP TABLE jobs;
+
+-- CREATE TABLE `users` (
+--   `id` int(11) NOT NULL AUTO_INCREMENT,
+--   `username` varchar(100) NOT NULL,
+--   `password` varchar(100) NOT NULL,
+--   `name` varchar(100) DEFAULT NULL,
+--   `email` varchar(100) DEFAULT NULL,
+--   `phone` varchar(100) DEFAULT NULL,
+--   `age` varchar(100) DEFAULT NULL,
+--   `location` varchar(100) DEFAULT NULL,
+--   `usertype` varchar(100) DEFAULT NULL,
+--   PRIMARY KEY (`id`)
+-- )
