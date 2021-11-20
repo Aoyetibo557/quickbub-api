@@ -70,10 +70,12 @@ exports.findAll = (req, res) => {
 // later on update this function to query for title, date, category also
 
 exports.findByTitle = (req, res) => {
-    const title = req.query.title;
+    const title = req.params.title;
     var condition = title ? {title: {[Op.like]: `%${title}%` } } : null;
 
-    Jobs.findAll({where: condition})
+    var altCondition = title ? { title: { [Op.like]: `%${author}` } } : null;
+
+    Jobs.findAll({where: altCondition})
     .then(results => {
         if(results.length > 0 ){
             res.status(201).json({
