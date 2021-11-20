@@ -46,21 +46,21 @@ exports.createJob = (req, res) => {
 
 
 // later on update this function to query for title, date, category also
-exports.findAll = (req, res) => {
-    const title = req.query.username;
+exports.findByTitle = (req, res) => {
+    const title = req.query.title;
     var condition = title ? {title: {[Op.like]: `%${title}%` } } : null;
 
     Jobs.findAll({where: condition})
     .then(results => {
         if(results.length > 0 ){
             res.status(201).json({
-                message: "All the Jobs In the Jobs Table",
+                message: "All the Jobs In the Jobs Table with the title!",
                 jobs: results
             })
         }
         else{ 
             res.status(400).json({
-                message: "No jobs in the database",
+                message: "No jobs in the database with that title",
             })
         }
     })
@@ -73,7 +73,7 @@ exports.findAll = (req, res) => {
 }
 
 // find all jobs by a single author/users
-exports.findOne = (req, res) => {
+exports.findByAuthor = (req, res) => {
     const author = req.params.author;
     var condition = {[Op.like] : [
         {author: author ? author : null}
@@ -81,7 +81,7 @@ exports.findOne = (req, res) => {
 
     var altCondition = author ? { author: { [Op.like]: `%${author}` } } : null;
 
-    Jobs.findOne({where: altCondition})
+    Jobs.findAll({where: altCondition})
     .then(data => {
         if(!data) {
             res.status(500).send("No Jobs found under that author!");
