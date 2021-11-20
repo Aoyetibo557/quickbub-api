@@ -44,8 +44,31 @@ exports.createJob = (req, res) => {
 
 }
 
+exports.findAll = (req, res) => {
+    Jobs.findAll()
+    .then(results => {
+        if(results.length > 0 ){
+            res.status(201).json({
+                message: "All the Jobs In the Jobs Table!",
+                jobs: results
+            })
+        }
+        else{ 
+            res.status(400).json({
+                message: "No jobs in the database!",
+            })
+        }
+    })
+    .catch(error => {
+        res.status(500).json({
+            message: "Error occured While retrieving data!",
+
+        })
+    })
+}
 
 // later on update this function to query for title, date, category also
+
 exports.findByTitle = (req, res) => {
     const title = req.query.title;
     var condition = title ? {title: {[Op.like]: `%${title}%` } } : null;
