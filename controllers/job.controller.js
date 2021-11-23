@@ -73,7 +73,7 @@ exports.findByTitle = (req, res) => {
     const title = req.params.title;
     var condition = title ? {title: {[Op.like]: `%${title}%` } } : null;
 
-    var altCondition = title ? { title: { [Op.like]: `%${author}` } } : null;
+    var altCondition = title ? { title: { [Op.like]: `%${title}` } } : null;
 
     Jobs.findAll({where: altCondition})
     .then(results => {

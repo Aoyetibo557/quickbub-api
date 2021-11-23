@@ -24,4 +24,7 @@ router.put("/update/:id", user.update);
 //Find a user by username 
 router.get("/find/:username", user.findOne);
 
+//Find a user by signup name/ profile name
+router.get("/finduser/:name", user.findbyName);
+
 module.exports = router;
