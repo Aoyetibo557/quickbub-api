@@ -5,7 +5,7 @@ const db = require("./models");
 const app = express();
 
 var corsOption = {
-  origin: "http://localhost:9090" || "https://quickbuck-api.herokuapp.com",
+  origin: "http://localhost:9090",
 
 };
 
