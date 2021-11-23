@@ -298,25 +298,25 @@ exports.findbyName = (req, res) => {
 
     const condition = name ? { name: {[Op.like]: `%${name}`}} : null;
 
-    UserProfiles.findOne({where: condition})
+    UserProfiles.findOne({where: {name: name}})
     .then(result => {
-        if(result.length > 0) {
-            res.status(201).json({
-                message: "User Profile Details!",
-                jobs: result
-            })
-        }
-        else {
+        if(result === null) {
             res.status(404).json({
                 message: "User Profile Not Found!",
-                jobs: result
+            })
+            
+        }
+        else {
+            res.status(201).json({
+                message: "User Profile Details!",
+                user: result
             })
         }
     })
     .catch(error => {
         res.status(500).json({
             message: "An error occured while retriving user profile!" + " " +error,
-            jobs: result
+            user: result
         })
     })
 }
