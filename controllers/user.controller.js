@@ -3,9 +3,6 @@ const UserProfiles = db.users;
 const Op = db.Sequelize.Op;
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { where } = require("sequelize/types");
-
-
 
 
 //Simple Create To test api and save a new user account
