@@ -299,11 +299,11 @@ exports.findbyName = (req, res) => {
 
     const condition = name ? { name: {[Op.like]: `%${name}`}} : null;
 
-    UserProfiles.find({where: condition})
+    UserProfiles.findOne({where: condition})
     .then(result => {
         if(result.length > 0) {
             res.status(201).json({
-                message: "User Profile Dertails!",
+                message: "User Profile Details!",
                 jobs: result
             })
         }
