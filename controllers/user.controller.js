@@ -294,30 +294,30 @@ exports.delete = (req, res) => {
 
 
 // find a profile by name
-exports.findbyName = (req, res) => {
-    const name = req.params.name;
+// exports.findbyName = (req, res) => {
+//     const name = req.params.name;
 
-    const condition = name ? { name: {[Op.like]: `%${name}`}} : null;
+//     const condition = name ? { name: {[Op.like]: `%${name}`}} : null;
 
-    UserProfiles.findOne({where: condition})
-    .then(result => {
-        if(result.length > 0) {
-            res.status(201).json({
-                message: "User Profile Details!",
-                jobs: result
-            })
-        }
-        else {
-            res.status(404).json({
-                message: "User Profile Not Found!",
-                jobs: result
-            })
-        }
-    })
-    .catch(error => {
-        res.status(500).json({
-            message: "An error occured while retriving user profile!" + " " +error,
-            jobs: result
-        })
-    })
-}
+//     UserProfiles.findOne({where: condition})
+//     .then(result => {
+//         if(result.length > 0) {
+//             res.status(201).json({
+//                 message: "User Profile Details!",
+//                 jobs: result
+//             })
+//         }
+//         else {
+//             res.status(404).json({
+//                 message: "User Profile Not Found!",
+//                 jobs: result
+//             })
+//         }
+//     })
+//     .catch(error => {
+//         res.status(500).json({
+//             message: "An error occured while retriving user profile!" + " " +error,
+//             jobs: result
+//         })
+//     })
+// }
