@@ -18,6 +18,9 @@ module.exports = (sequelize, Sequelize) => {
         age: {
             type: Sequelize.NUMBER
         },
+        gender: {
+            type: Sequelize.STRING
+        },
         location: {
             type: Sequelize.STRING
         },

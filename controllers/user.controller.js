@@ -21,6 +21,7 @@ exports.create = (req, res) => {
         password: req.body.password,
         name: req.body.name,
         age: req.body.age,
+        gender: req.body.gender,
         location: req.body.location,
         usertype: req.body.usertype
     };
@@ -149,6 +150,7 @@ exports.signUp =(req, res) => {
                         email: req.body.email,
                         phone: req.body.phone,
                         age: req.body.age,
+                        gender: req.body.gender,
                         location: req.body.location,
                         usertype: req.body.usertype
                     };
@@ -232,7 +234,7 @@ exports.login = (req, res) => {
                         email: user.email,
                         phone: user.phone,
                         age: user.age,
-        
+                        gender: user.gender,
                         location: user.location,
                         userId: user.id,
                         userType: user.usertype,

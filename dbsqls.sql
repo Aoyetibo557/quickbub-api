@@ -20,15 +20,16 @@
 
 -- DROP TABLE jobs;
 
--- CREATE TABLE `users` (
---   `id` int(11) NOT NULL AUTO_INCREMENT,
---   `username` varchar(100) NOT NULL,
---   `password` varchar(100) NOT NULL,
---   `name` varchar(100) DEFAULT NULL,
---   `email` varchar(100) DEFAULT NULL,
---   `phone` varchar(100) DEFAULT NULL,
---   `age` varchar(100) DEFAULT NULL,
---   `location` varchar(100) DEFAULT NULL,
---   `usertype` varchar(100) DEFAULT NULL,
+-- CREATE TABLE users (
+--   id int(11) NOT NULL AUTO_INCREMENT,
+--   username varchar(100) NOT NULL,
+--   password varchar(100) NOT NULL,
+--   name varchar(100) DEFAULT NULL,
+--   email varchar(100) DEFAULT NULL,
+--   phone varchar(100) DEFAULT NULL,
+--   age varchar(100) DEFAULT NULL,
+--   gender varchar(100) NOT NULL,
+--   location varchar(100) DEFAULT NULL,
+--   usertype varchar(100) DEFAULT NULL,
 --   PRIMARY KEY (`id`)
 -- )
