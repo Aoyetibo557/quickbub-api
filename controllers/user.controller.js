@@ -46,7 +46,17 @@ exports.findAll = (req, res) => {
 
     UserProfiles.findAll({where: condition})
     .then(data => {
-        res.send(data);
+        if(data.length > 0) {
+            res.status(200).json({
+                message: "All User Profiles!",
+                result: data
+            })
+        }else{
+            res.status(400).json({
+                message: "No Users in the Database!",
+                result: data
+            })
+        }
     })
     .catch(err => {
         res.status(500).send({
