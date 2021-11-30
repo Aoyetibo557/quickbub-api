@@ -30,6 +30,9 @@ module.exports = (sequelize, Sequelize) => {
         tag2: {
             type: Sequelize.STRING
         },
+        county: {
+            type:Sequelize.STRING
+        },
         latitude: {
             type: Sequelize.STRING
         },

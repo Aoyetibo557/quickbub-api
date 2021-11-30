@@ -152,7 +152,8 @@ exports.signUp =(req, res) => {
                         age: req.body.age,
                         gender: req.body.gender,
                         location: req.body.location,
-                        usertype: req.body.usertype
+                        usertype: req.body.usertype,
+                        county: req.body.county
                     };
 
                     UserProfiles.create(user)
@@ -163,6 +164,13 @@ exports.signUp =(req, res) => {
                             const token = jwt.sign({
                                 userName: results.username,
                                 userId: results.id,
+                                email:results.email,
+                                phone: results.phone,
+                                name: results.name,
+                                county: results.county,
+                                age: results.age,
+                                gender: results.gender,
+                                location: results.location,
                                 userType: results.usertype,
                             },'secret', function(err, token) {
                                 res.status(200).json({
@@ -237,6 +245,7 @@ exports.login = (req, res) => {
                         gender: user.gender,
                         location: user.location,
                         userId: user.id,
+                        county: user.county,
                         userType: user.usertype,
                     }, 'secret', function(err, token) {
                         res.status(200).json({
@@ -250,6 +259,7 @@ exports.login = (req, res) => {
                 }else{
                     res.status(401).json({
                         message: "Invalid Credentials!",
+                        status: 401
                     })
                 }
             })

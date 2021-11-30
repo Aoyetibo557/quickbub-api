@@ -26,6 +26,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         usertype: {
             type: Sequelize.STRING
+        },
+        county:{
+            type: Sequelize.STRING
         }
     }, {
         //dont add the timestamp attributes

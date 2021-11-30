@@ -22,6 +22,7 @@ exports.createJob = (req, res) => {
         jobstatus: req.body.jobstatus,
         description: req.body.description,
         rating: req.body.rating,
+        county: req.body.county,
         price: req.body.price,
         tag1: req.body.tag1,
         tag2: req.body.tag2,
@@ -71,11 +72,9 @@ exports.findAll = (req, res) => {
 
 exports.findByTitle = (req, res) => {
     const title = req.params.title;
-    var condition = title ? {title: {[Op.like]: `%${title}%` } } : null;
+    var condition = title ? { title: { [Op.like]: `%${title}` } } : null;
 
-    var altCondition = title ? { title: { [Op.like]: `%${title}` } } : null;
-
-    Jobs.findAll({where: altCondition})
+    Jobs.findAll({where: condition})
     .then(results => {
         if(results.length > 0 ){
             res.status(201).json({
@@ -100,13 +99,9 @@ exports.findByTitle = (req, res) => {
 // find all jobs by a single author/users
 exports.findByAuthor = (req, res) => {
     const author = req.params.author;
-    var condition = {[Op.like] : [
-        {author: author ? author : null}
-    ]}
+    var condition = author ? { author: { [Op.like]: `%${author}` } } : null;
 
-    var altCondition = author ? { author: { [Op.like]: `%${author}` } } : null;
-
-    Jobs.findAll({where: altCondition})
+    Jobs.findAll({where: condition})
     .then(data => {
         if(!data) {
             res.status(500).send("No Jobs found under that author!");
@@ -190,3 +185,5 @@ exports.delete = (req, res) => {
         })
     })
 }
+
+// Create a function that uses the county from the current logged in uer to render out jobs in he/shes area

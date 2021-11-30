@@ -10,6 +10,7 @@
 --     jobstatus VARCHAR(255) NOT NULL,
 --     tag1 VARCHAR(255) NOT NULL, 
 --     tag2 VARCHAR(255) NOT NULL,
+--     county varchar(100) DEFAULT NULL,
 --     latitude VARCHAR(225) NOT NULL,
 --      longitude VARCHAR(255) NOT NULL,
 --     primary key (id)    
@@ -30,6 +31,7 @@
 --   age varchar(100) DEFAULT NULL,
 --   gender varchar(100) NOT NULL,
 --   location varchar(100) DEFAULT NULL,
+--   county varchar(100) DEFAULT NULL,
 --   usertype varchar(100) DEFAULT NULL,
 --   PRIMARY KEY (`id`)
 -- )
