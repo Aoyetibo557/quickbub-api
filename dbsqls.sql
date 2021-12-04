@@ -1,18 +1,19 @@
 -- CREATE TABLE jobs (
 -- 	id INT NOT NULL auto_increment,
 --     jobId VARCHAR(255) NOT NULL,
---     title VARCHAR(255) NOT NULL,
+--     name VARCHAR(255) NOT NULL,
+--     description VARCHAR(255) NOT NULL,
+--     latitude VARCHAR(225) NOT NULL,
+--     longitude VARCHAR(255) NOT NULL,
+--     tags VARCHAR(285) NOT NULL, 
+--     rating VARCHAR(100) NOT NULL,
+--     num_reviews VARCHAR(150) NOT NULL,
+--     price VARCHAR(255) NOT NULL, 
 --     joblocation VARCHAR(255) NOT NULL,
 --     author VARCHAR(255) NOT NULL,
---     description VARCHAR(255) NOT NULL,
---     price VARCHAR(255) NOT NULL, 
---     rating VARCHAR(100) NOT NULL,
+--     website VARCHAR(255) NOT NULL,
 --     jobstatus VARCHAR(255) NOT NULL,
---     tag1 VARCHAR(255) NOT NULL, 
---     tag2 VARCHAR(255) NOT NULL,
---     county varchar(100) DEFAULT NULL,
---     latitude VARCHAR(225) NOT NULL,
---      longitude VARCHAR(255) NOT NULL,
+--     county_name varchar(100) DEFAULT NULL,
 --     primary key (id)    
 -- );
 

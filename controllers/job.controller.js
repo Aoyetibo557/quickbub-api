@@ -16,16 +16,17 @@ exports.createJob = (req, res) => {
     // object to hold the passed in data for the job from the user endpoint
     const job = {
         jobId: req.body.jobId,
-        title: req.body.title,
+        name: req.body.title,
+        description: req.body.description,
         joblocation: req.body.joblocation,
+        tags: req.body.tag1,
         author: req.body.author,
         jobstatus: req.body.jobstatus,
-        description: req.body.description,
         rating: req.body.rating,
-        county: req.body.county,
+        num_reviews: req.body.num_reviews,
+        county_name: req.body.county,
+        website: req.body.website,
         price: req.body.price,
-        tag1: req.body.tag1,
-        tag2: req.body.tag2,
     };
 
     // This takes in the object above

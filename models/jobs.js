@@ -1,10 +1,34 @@
 module.exports = (sequelize, Sequelize) => {
     const Job = sequelize.define("jobs",  {
+     
         jobId: {
             type: Sequelize.STRING
         },
-        title: {
+        name: {
             type: Sequelize.STRING
+        },
+        description: {
+            type: Sequelize.ARRAY(Sequelize.STRING),
+            defaultvalue: null
+        },
+        latitude: {
+            type: Sequelize.STRING
+        },
+        longitude: {
+            type: Sequelize.STRING
+        },
+        tags: {
+            type: Sequelize.ARRAY(Sequelize.STRING),
+            defaultvalue: null
+        },
+        rating: {
+            type: Sequelize.INTEGER
+        },
+        num_reviews: {
+            type: Sequelize.INTEGER
+        },
+        price: {
+            type: Sequelize.INTEGER
         },
         joblocation: {
             type: Sequelize.STRING
@@ -12,33 +36,16 @@ module.exports = (sequelize, Sequelize) => {
         author: {
             type: Sequelize.STRING
         },
+        website: {
+            type: Sequelize.STRING
+        },
         jobstatus:{
             type: Sequelize.STRING
         },
-        description: {
-            type: Sequelize.STRING
-        },
-        rating: {
-            type: Sequelize.INTEGER
-        },
-        price: {
-            type: Sequelize.STRING
-        },
-        tag1: {
-            type: Sequelize.STRING
-        },
-        tag2: {
-            type: Sequelize.STRING
-        },
-        county: {
+        county_name: {
             type:Sequelize.STRING
         },
-        latitude: {
-            type: Sequelize.STRING
-        },
-        longitude: {
-            type: Sequelize.STRING
-        }
+        
     }, {
          //dont add the timestamp attributes
         timestamps: false,
