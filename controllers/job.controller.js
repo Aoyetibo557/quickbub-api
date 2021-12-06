@@ -187,4 +187,24 @@ exports.delete = (req, res) => {
     })
 }
 
-// Create a function that uses the county from the current logged in uer to render out jobs in he/shes area
+// Create a function that uses the county from the current logged in user to render out jobs in he/shes area
+
+exports.findByCounty = (req, res) => {
+    const county_name = req.params.county_name;
+
+    var condition = county_name ? { county_name: { [Op.like]: `%${county_name}` } } : null;
+
+    Jobs.findAll({where: condition})
+    .then(result=> {
+        if(!result) {
+            res.status(404).json({
+                message: "Job with Count not found!"
+            })
+        }else {
+            res.status(200).json({
+                message: "All Jobs in the County!",
+                jobs: result
+            })
+        }
+    })
+}

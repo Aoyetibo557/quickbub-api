@@ -17,6 +17,9 @@ router.get("/find/:author", job.findByAuthor);
 // find jobs by title && all the jobs in the table
 router.get("/findtitle/:title", job.findByTitle);
 
+// find jobs by county name
+router.get("/findbycounty/:county_name", job.findByCounty);
+
 // update job status
 // Not yet working
 router.put("/update/:id", job.updateStatus);
