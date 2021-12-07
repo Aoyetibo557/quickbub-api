@@ -17,11 +17,11 @@
 
 // ClearDb Connection
 module.exports = {
-  HOST: "us-cdbr-east-04.cleardb.com",
-  USER: "b6cab839e2aee8",
-  PASSWORD: "d6757ff4",
-  DB: "heroku_de5533936e51148",
-  PORT: 3306,
+  HOST: process.env.HOST,
+  USER: process.env.USER,
+  PASSWORD: process.env.PASSWORD,
+  DB: process.env.DB,
+  PORT: process.env.PORT,
   dialect: "mysql",
   pool: {
     max: 5,
